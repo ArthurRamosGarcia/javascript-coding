@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img width="150" height="100" src="https://s3.static.brasilescola.uol.com.br/be/2022/06/formas-geometricas.jpg">
+    <h3 style="font-size: medium;color: crimson;">Calculadora Geométrica</h3>
+    <hr>
+    </hr>
+    <script type="text/javascript">
+      areatriangulo = function (base, altura) {
+  area = (parseFloat(base) * parseFloat(altura)) / 2;
+  return area;
+};
+
+arearetangulo = function (base, altura) {
+  area = parseFloat(base) * parseFloat(altura);
+  return area;
+};
+
+areaquadrado = function (lado) {
+  area = parseFloat(lado) * parseFloat(lado);
+  return area;
+};
+
+areatrapezio = function (base_maior, base_menor, altura) {
+  area =
+    ((parseFloat(base_menor) + parseFloat(base_maior)) * parseFloat(altura)) /
+    2;
+  return area;
+};
+
+areacirculo = function (raio) {
+  area = 3.14 * parseFloat(raio) * parseFloat(raio);
+  return area;
+};
+
+do {
+  resposta = prompt(
+    "Escolha uma figura geométrica: \n" +
+      "1) Triângulo\n" +
+      "2) Retângulo\n" +
+      "3) Quadrado\n" +
+      "4) Trapézio\n" +
+      "5) Círculo\n" +
+      "6) Sair"
+  );
+
+  switch (resposta) {
+    case "1":
+      base = parseFloat(prompt("Digite o valor da base do triângulo: "));
+      altura = parseFloat(prompt("Digite o valor da altura do triângulo: "));
+      unidade = prompt("qual é a unidade de medida? (km/hm/dam/m/dm/cm/mm)");
+      area = areatriangulo(base, altura);
+      alert("A área desse triângulo é de " + area + unidade + "²");
+      break;
+    case "2":
+      base = parseFloat(prompt("Digite o valor da base do retângulo: "));
+      altura = parseFloat(prompt("Digite o valor da altura do retângulo: "));
+      unidade = prompt("qual é a unidade de medida? (km/hm/dam/m/dm/cm/mm)");
+      area = arearetangulo(base, altura);
+      alert("A área desse retângulo é de " + area + unidade + "²");
+      break;
+    case "3":
+      base = parseFloat(prompt("Digite o valor do lado do quadrado: "));
+      unidade = prompt("qual é a unidade de medida? (km/hm/dam/m/dm/cm/mm)");
+      area = areaquadrado(lado);
+      alert("A área desse quadrado é de " + area + unidade + "²");
+      break;
+    case "4":
+      base_maior = parseFloat(
+        prompt("Digite o valor da base maior do trapézio: ")
+      );
+      base_menor = parseFloat(
+        prompt("Digite o valor da base menor do trapézio: ")
+      );
+      altura = parseFloat(prompt("Digite o valor da altura do trapézio: "));
+      unidade = prompt("qual é a unidade de medida? (km/hm/dam/m/dm/cm/mm)");
+      area = areatrapezio(base_maior, base_menor, altura);
+      alert("A área desse trapézio é de " + area + unidade + "²");
+      break;
+    case "5":
+      base = parseFloat(prompt("Digite o valor do raio do círculo: "));
+      unidade = prompt("qual é a unidade de medida? (km/hm/dam/m/dm/cm/mm)");
+      area = areacirculo(raio);
+      alert("A área desse círculo é de " + area + unidade + "²");
+      break;
+    case "6":
+      alert("Finalizando...");
+      break;
+    default:
+      alert("Opção inválida.");
+      break;
+  }
+} while (resposta != "6");
+    </script>
+  </body>
+</html>
